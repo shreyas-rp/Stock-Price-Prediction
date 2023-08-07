@@ -1,0 +1,44 @@
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv("ENJOYSPORT.csv")
+attribute=np.array(data)[:,:-1]
+target=np.array(data)[:,-1]
+
+def find_s(att,tar):
+    for i,val in enumerate(tar):
+        if val=='yes':
+            spe_h = att[i].copy()
+            break
+    for i,val in enumerate (att):
+        if tar[i]=='yes':
+            for x in range (len(spe_h)):
+                if val[x]!=spe_h[x]:
+                    spe_h[x]='?'
+    return spe_h 
+
+def list_then_eliminate(con, tar):
+    general_h = ['?' for i in range(len(con[0]))]
+    print(general_h)
+    for i, val in enumerate(tar):
+        if val == 'yes':
+            for j in range(len(con[i])):
+                if general_h[j] == '?':
+                    general_h[j] = con[i][j]
+                elif general_h[j] != con[i][j]:
+                    general_h[j] = '?'
+    
+    return general_h
+
+data = pd.read_csv('ENJOYSPORT.csv')
+print(data) 
+concepts=np.array(data)[:,:-1]
+print(concepts)
+print("-----------")
+targets=np.array(data)[:,-1]
+print(targets)
+print("-----------")
+h1 = find_s(concepts,targets)
+print("Most specific hypothesis by FIND-S algorithm is:", h1)
+h2 = list_then_eliminate(concepts,targets)
+print("Final hypothesis space by LIST THEN ELIMINATE algorithm is:", h2)
