@@ -41,7 +41,7 @@ jupyter notebook Stock_Price_Prediction_(LSTM).ipynb
 3.**Model Architecture:** We build an LSTM neural network using Keras. The model consists of two LSTM layers with 50 units each, followed by two dense layers with 25 and 1 unit, respectively. The model is compiled using the Adam optimizer and the mean squared error (MSE) loss function. 
 4. **Model Training:** The model is trained on the training dataset with a batch size of 1 and 10 epochs. The LSTM layers enable the model to capture temporal dependencies in the stock price data.
 5. **Prediction:** The trained model is used to predict future stock prices. We select the last 60 days of closing prices from the testing dataset as input to the model for prediction. The predicted values are then scaled back to their original range using inverse transformation.   
-6. Visualization: We visualize the actual and predicted stock prices on a plot for better understanding and evaluation.
+6.** Visualization:** We visualize the actual and predicted stock prices on a plot for better understanding and evaluation.
 # Results
   - Upon running the Jupyter Notebook, you'll see the training progress, model predictions, and visualizations of the actual and predicted stock prices.
     
