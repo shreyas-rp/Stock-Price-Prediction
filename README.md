@@ -25,7 +25,7 @@ pip install tensorflow keras yfinance pandas numpy matplotlib
 To get started, follow these steps:   
   1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/shreyas-rp/Stock-Price-Prediction
+git clone https://github.com/shreyas-rp/Stock-Price-Prediction.git
 ```
   2. Navigate to the project directory:
 ```bash
